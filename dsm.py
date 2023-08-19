@@ -13,7 +13,7 @@ def write_directory_structure(path, indent="", output_file=None, map_hidden=Fals
             write_directory_structure(item_path, indent + "\t", output_file, map_hidden)
         elif os.path.isfile(item_path):
             output_file.write(f"{indent}./{item}\n")
-            if item.endswith(".py") or item.endswith(".html") or item.endswith(".odt"):
+            if item.endswith((".py", ".html", ".odt", ".js", ".json")):
                 output_file.write(f"{indent}\t(source code):\n")
                 try:
                     with open(item_path, "r", encoding="utf-8") as source_file:
@@ -32,3 +32,4 @@ if __name__ == "__main__":
         write_directory_structure(root_directory, output_file=output_file, map_hidden=map_hidden_dirs)
 
     print("Mapping completed successfully.")
+
