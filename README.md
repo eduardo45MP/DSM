@@ -5,7 +5,7 @@ This Python script allows you to map the directory structure of a specified dire
 ## Features
 
 - Recursively maps the directory structure of a specified directory.
-- Includes the source code of `.py`, `.html`, and `.odt` files within the structure.
+- Includes the source code of `.py`, `.html`, and `.odt`, `.js`, `.json` files within the structure.
 - Option to exclude hidden directories (starting with `.`) from the mapping.
 
 ## Usage
