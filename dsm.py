@@ -5,9 +5,9 @@ def write_directory_structure(path, indent="", output_file=None, map_hidden=Fals
         output_file = open("directory_structure.txt", "w", encoding="utf-8")
 
     programming_file_types = (".py", ".html", ".odt", ".js", ".json", ".java", ".cpp", ".c", ".css", ".php",
-                              ".rb", ".swift", ".go", ".ts", ".sql", ".pl", ".r", ".sh", ".xml")
+                              ".rb", ".swift", ".go", ".ts", ".sql", ".pl", ".r", ".sh", ".xml", ".md")
 
-    office_file_types = (".doc", ".docx", ".md", ".ppt", ".pptx", ".xls", ".xlsx")
+    office_file_types = (".doc", ".docx", ".md", ".ppt", ".pptx", ".xls", ".xlsx", ".txt")
 
     for item in os.listdir(path):
         if not map_hidden and item.startswith('.'):
