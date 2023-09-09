@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 
 def write_directory_structure(path, indent="", output_file=None, map_hidden=False):
