@@ -1,13 +1,11 @@
-#!/usr/bin/env python
-
 import os
 
 def write_directory_structure(path, indent="", output_file=None, map_hidden=False):
     if output_file is None:
         output_file = open("directory_structure.txt", "w", encoding="utf-8")
 
-    programming_file_types = (".py", ".html", ".odt", ".js", ".json", ".java", ".cpp", ".c", ".css", ".php",
-                              ".rb", ".swift", ".go", ".ts", ".sql", ".pl", ".r", ".sh", ".xml", ".md")
+    # Define the programming and office file types to be included
+    programming_file_types = (".py", ".html", ".odt", ".js", ".json", ".java", ".cpp", ".c", ".css", ".php", ".rb", ".swift", ".go", ".ts", ".sql", ".pl", ".r", ".sh", ".xml", ".md")
 
     office_file_types = (".doc", ".docx", ".md", ".ppt", ".pptx", ".xls", ".xlsx", ".txt")
 
@@ -20,6 +18,7 @@ def write_directory_structure(path, indent="", output_file=None, map_hidden=Fals
             write_directory_structure(item_path, indent + "\t", output_file, map_hidden)
         elif os.path.isfile(item_path):
             output_file.write(f"{indent}./{item}\n")
+            # Check if the file extension is in the programming or office file types
             if item.endswith(programming_file_types + office_file_types):
                 output_file.write(f"{indent}\t(source code):\n")
                 try:
